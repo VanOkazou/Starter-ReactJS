@@ -1,0 +1,59 @@
+body {
+  background: #2B3A42;
+}
+
+header {
+  padding: 30px 0;
+}
+
+h1 {
+  color: rgba(141, 214, 249, 1);
+  text-align: center;
+  font-size: 50px;
+}
+h1 small {
+  color: #1D78C1;
+  display: block;
+  font-size: .5em;
+}
+
+.searchbar {
+  width: 100%;
+  text-align: center;
+  height: 45px;
+  border: none;
+  margin-top: 30px;
+  font-size: 25px;
+}
+.searchbar:hover, .searchbar:focus, .searchbar:active {
+  outline: none;
+}
+.searchbar::placeholder {
+  color: #ccc;
+}
+
+.content .container {
+  background: #fff;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li:hover {
+  cursor: pointer;
+  background: #efefef;
+}
+li.active {
+  background-color: #1D78C1;
+}
+li.active:hover {
+  cursor: auto;
+}
+footer {
+  text-align: center;
+  color: #fff;
+  padding: 20px 0;
+}

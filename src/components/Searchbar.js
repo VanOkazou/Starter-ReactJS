@@ -2,21 +2,34 @@ import React, { Component } from 'react';
 
 class Searchbar extends Component {
 
-  state = {
-    input: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: this.props.query
+    }
   }
 
-  onInputChange = e => {
+  componentDidMount() {
+    this.searchbar.focus();
+  }
+
+  handleChange = e => {
     const input = e.target.value;
     this.setState({input});
+    this.props.newSearch(input);
   }
 
   render(){
     return (
-      <input
-        value={this.state.input}
-        onChange={e=>{this.onInputChange(e)}}
-      />
+      <div>
+        <input
+          ref={input => this.searchbar = input}
+          className="searchbar"
+          value={this.state.input}
+          onChange={e=>{this.handleChange(e)}}
+          placeholder={this.state.input !== '' ? this.state.input : "Enter your search"}
+        />
+      </div>
     )
   }
 }

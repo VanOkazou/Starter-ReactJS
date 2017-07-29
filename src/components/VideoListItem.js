@@ -1,10 +1,14 @@
 import React from 'react';
 
-function VideoListItem({video}) {
-  //const video = props.video.snippet;
+const VideoListItem = ({video, changeVideo, active, index, changeIndexCurrentVideo}) => {
+
+  const handleClick = () => {
+    changeVideo(video);
+    changeIndexCurrentVideo(index);
+  }
 
   return (
-    <li className="list-group-item">
+    <li className={`list-group-item ${active === 'yes' ? 'active' : ''}`} onClick={() => handleClick()}>
       <div className="video-list media">
         <div className="media-left">
           <img src={video.snippet.thumbnails.default.url} alt={video.snippet.title} className="media-object"/>
